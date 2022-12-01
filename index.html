@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,12 +27,16 @@
             var 답 = 'abcde';
             document.querySelector('button').addEventListener('click',
             function() {
-                var input = document.querySelectAll('.input');
+                var input = document.querySelectorAll('.input');
 
-                if (input[0].value == 답[0]) {
-                    input[0].style.background = 'green';
-                } else if (답.includes(input[0].value)) {
-                    input[0].style.background = 'yello';
+                for (let i = 0; i < 5; i++) {
+                    if (input[i].value == 답[i]) {
+                        input[i].style.background = 'green';
+                    } else if (답.includes(input[0].value)) {
+                        input[i].style.background = 'yello';
+                    } else {
+                        input[i].style.background = 'lightgrey';
+                    }
                 }
             })
         </script>
