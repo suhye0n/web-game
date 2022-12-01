@@ -4,6 +4,11 @@ var ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth - 100;
 canvas.height = window.innerHeight - 100;
 
+var img1 = new Image();
+img1.src = 'cactus.png';
+var img2 = new Image();
+img2.src = 'dino.png';
+
 var dino = {
     x: 10,
     y : 200,
@@ -11,7 +16,8 @@ var dino = {
     height: 50,
     draw() {
         ctx.fillStyle = 'green';
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+        //ctx.fillRect(this.x, this.y, this.width, this.height);
+        ctx.drawImage(img2, this.x, this.y, 40, 40);
     }
 }
 dino.x += 1;
@@ -26,7 +32,8 @@ class Cactus {
     }
     draw() {
         ctx.fillStyle = 'red';
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+        //ctx.fillRect(this.x, this.y, this.width, this.height);
+        ctx.drawImage(img1, this.x, this.y, 40, 40);
     }
 }
 var cactus = new Cactus();
@@ -58,12 +65,12 @@ function run() {
     })
 
     if (jumping == true) {
-        dino.y -= 1;
-        jumpTimer++;
+        dino.y -= 3;
+        jumpTimer+=3;
     }
     if (jumping == false) {
         if (dino.y < 200) {
-            dino.y++;
+            dino.y+=3;
         }
     }
     if (jumpTimer > 100) {
