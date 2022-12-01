@@ -38,6 +38,16 @@
                         input[i].style.background = 'lightgrey';
                     }
                 }
+
+                var template = `<div>
+                    <input class="input">
+                    <input class="input">
+                    <input class="input">
+                    <input class="input">
+                    <input class="input">
+                </div>`;
+                document.querySelector('body').insertAdjacentHTML
+                ('beforeend', template);
             })
         </script>
     </body>
